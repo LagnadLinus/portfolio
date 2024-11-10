@@ -1,0 +1,93 @@
+
+
+/* Ensure labels stay white in dark mode for contact */
+body:not(.light-mode) #contact-form label {
+    color: #fff;
+  }
+
+
+  /* Contact Form Box Styles */
+  .contact-box {
+    background-color: #000; /* Darker background for the form box */
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto; /* Center the form box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add box shadow */
+  }
+
+
+  #contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between input fields */
+  }
+
+
+  #contact-form label {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
+
+  #contact-form input[type="text"],
+  #contact-form input[type="email"], 
+  #contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #5a2083;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+  }
+
+#contact-form textarea {
+    height: 150px;
+    resize: none;
+  }
+
+
+  #contact-form button {
+    background-color: #5a2083;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+
+  #contact-form button:hover {
+    background-color: #6a0b93;
+  }
+
+
+  #contact-form input::placeholder,
+  #contact-form textarea::placeholder {
+    color: #888;
+  }
+
+  /* Add this to Contact.css */
+.submission-status {
+  margin-top: 10px;
+  text-align: center; /* Center the text */
+  color: rgb(159, 90, 216);
+}
+
+.submission-status.error {
+  color: rgb(255, 140, 0);
+}
+
+
+
+  /* Mobile Styles for Contact Form */
+  @media (max-width: 768px) {
+    #contact-form {
+        padding: 15px;
+    }
+  }
+
+

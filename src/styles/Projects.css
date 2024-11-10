@@ -1,0 +1,60 @@
+
+
+
+/* Portfolio Grid for Featured Works */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+  }
+
+
+  /* items inside portfolio grid */
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 250px;
+  }
+
+  /* image style inside portfolio item */
+  .portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+
+  /* hover style for image */
+  .portfolio-item:hover img {
+    transform: scale(1.05);
+  }
+  
+
+  /* overlay style for portfolio project details */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.3s;
+  }
+  
+
+  /* overlay style for portfolio project details and image */
+  .portfolio-item:hover .overlay {
+    opacity: 1;
+  }

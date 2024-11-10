@@ -1,0 +1,174 @@
+
+
+header {
+    background: #2b2a2a;
+    color: #fff;
+    padding: 10px 20px;
+    position: relative; /* Ensures the header remains relative for positioning */
+    z-index: 1000; /* Ensure header stays above everything */
+  }
+ 
+  /* When the menu is open, apply a backdrop filter to the entire screen */
+  header.open {
+    backdrop-filter: blur(8px); /* Apply blur to the background */ 
+    background-color: #2b2a2a;; /* Darken the background slightly */
+  }
+
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+
+
+  nav .logo {
+    display: flex;
+    align-items: center;
+  }
+
+
+  nav .logo img {
+    height: 40px; /* Adjust logo size */
+    margin-right: 10px; /* Space between logo and name */
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+
+/* Add a box around the menu items and style them */
+  nav .menu-container {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background (new applied) */
+    padding: 15px; /* Padding for the box (new applied) */
+    border-radius: 10px; /* Rounded corners (new applied) */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth (new applied) */
+  }
+
+  
+
+  /* Adjust navigation links for mobile */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+  }
+
+
+  nav ul li {
+    margin: 15px 0; /* Increased margin between menu items */
+  }
+
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3 ease, padding 0.3s ease;
+    padding: 10px 15px; /* Add padding for better click area */
+    border-radius: 5px; /* Rounded corners for the links */
+  }
+
+
+  nav ul li a:hover {
+    color: #5a2083; /* Change text color on hover */
+    background-color: #fff; /* Background color on hover */
+    border-radius: 5px; /* Add rounded corners on hover */
+    padding: 10px 10px; /* Add padding for hover effect */
+  }
+
+
+  /* Sun and Moon animations */
+.sun-icon {
+    animation: spin 2s linear infinite; /* Sun spinning animation */
+}
+
+.moon-icon {
+    animation: pulse 1s infinite; /* Moon pulsing animation */
+}
+
+/* Keyframes for animations */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: relative; /* Position relative for the pull chain effect */
+  }
+
+
+
+  /* Hamburger Menu Styles */
+  nav .hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column; /* Stack the bars vertically */
+    cursor: pointer; /* Change cursor to pointer */
+    background: transparent; /* Transparent background */
+    border: none; /* No border */
+    padding: 0; /* Remove padding */
+  }
+
+
+  nav .hamburger.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Move first bar down and rotate */
+  }
+
+  nav .hamburger.open .bar:nth-child(2) {
+      opacity: 0; /* Hide the second bar */
+  }
+
+  nav .hamburger.open .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg); /* Move third bar up and rotate */
+  }
+  
+  nav .hamburger .bar {
+    width: 25px; /* Width of hamburger bars */
+    height: 3px; /* Height of hamburger bars */
+    background-color: #fff; /* Color of hamburger bars */
+    margin: 4px 0; /* Space between bars */
+    transition: all 0.3s ease; /* Transition for the bar animations */
+  }
+
+/* Display hamburger icon on small screens */
+@media (max-width: 768px) {
+    nav ul {
+      display: none; /* Hide nav links by default on mobile */
+      flex-direction: column; /* Stack links vertically */
+      width: 100%; /* Full width */
+      position: absolute; /* Position relative to parent */
+      top: 60px; /* Position below the header */
+      left: 0; /* Align to the left */
+      background: rgba(43, 42, 42, 0.8); /* Transparent background */
+      padding: 10px 0; /* Add padding */
+      z-index: 1000; /* Ensure it's on top */
+      align-items: center; /* Center items horizontally */
+    }
+  
+    nav ul.open {
+      display: flex; /* Show menu when open */
+    }
+  
+    nav .hamburger {
+      display: flex; /* Show hamburger icon */
+    }
+  }

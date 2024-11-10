@@ -1,0 +1,210 @@
+
+
+
+
+
+/* This is the overall container that wraps around all components */
+.app-container {
+  transition: filter 0.3s ease;
+}
+
+/* When the menu is open, blur the entire app content except the menu */
+.app-container.blur {
+  filter: blur(8px); /* Apply blur to the content behind the menu */
+}
+
+
+/* Make sure that the menu itself isn't blurred, only the content behind it */
+.nav-links.open {
+  filter: none; /* Prevent blur from affecting the open menu */
+  background: rgba(43, 42, 42, 0.95); /* Slightly more solid background for focus */
+  z-index: 1000; /* Keep it above the blurred content */
+}
+
+/* Header in open state */
+header.open {
+  backdrop-filter: blur(8px);
+}
+
+/* Add this class to blur the content */
+.blur {
+  filter: blur(8px); /* Change the value as needed */
+  transition: filter 0.3s ease; /* Smooth transition for the blur */
+}
+
+/* Sun Rays for Day Mode */
+.day-mode-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -50;
+  background: conic-gradient(from 0deg, rgba(255, 223, 0, 0.5), transparent 30%, rgba(255, 223, 0, 0.5), transparent 60%);
+  animation: sunRaysGeometric 10s linear infinite;
+  pointer-events: none; /* Prevent interaction */
+  transform-origin: center; /* Rotate from the center */
+}
+
+@keyframes sunRaysGeometric {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Grey Shapes for Night Mode */
+.night-mode-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -50;
+  background: radial-gradient(circle, rgba(100, 100, 100, 0.5) 10%, transparent 70%);
+  animation: greyShapes 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes greyShapes {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/* Additional transitions and refinements */
+body {
+  transition: background-color 0.3s ease;
+}
+
+
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;  /* Smooth transition for dark mode */
+}
+
+
+/* Dark Mode / Day Mode Styles */
+
+/* Default Light Mode */
+body {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #2c2c2c;
+  color: #fff;
+}
+
+/* Changing Title */
+.changing-title {
+  font-size: 2rem;
+  margin-top: 80px;
+  text-align: center;
+}
+
+#role {
+  font-weight: bold;
+  display: inline-block;
+  transition: opacity 0.5s ease-in-out;
+}
+
+
+body.light-mode #mode-toggle {
+  color: #333; /* Dark color for toggle in light mode */
+}
+
+body:not(.light-mode) #mode-toggle {
+  color: #fff; /* Light color for toggle in dark mode */
+}
+
+
+.btn {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #5a2083;
+  box-shadow: 0 0 20px rgb(107, 63, 139);
+}
+
+.download-button {
+  background-color: #5a2083;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(90, 32, 131, 0.7);
+}
+
+/* Section Styling */
+section {
+  margin-bottom: 20px;
+}
+
+div.section {
+  margin-bottom: 1000px;
+  padding-top: 30px;
+}
+
+#about, #skills, #projects, #contact {
+  margin-bottom: 60px;
+  padding-top: 40px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+#scrollToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position at the bottom */
+  bottom: 30px; /* 30px from the bottom */
+  right: 30px; /* 30px from the right */
+  z-index: 999; /* Stay on top of other content */
+  font-size: 18px; /* Button text size */
+  background-color: #5a2083; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  cursor: pointer; /* Pointer cursor */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  transition: opacity 0.3s; /* Smooth transition */
+}
+
+#scrollToTopBtn:hover {
+  background-color: #333; /* Darken on hover */
+}
+
+
+/* Make sure the button is excluded from the blur effect */
+.app-container.blur .scrollToTopBtn {
+  filter: none; /* Exclude the scroll button from blur */
+  z-index: 101; /* Keep it on top */
+}
+
+

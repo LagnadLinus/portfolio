@@ -1,0 +1,80 @@
+
+
+
+
+.banner {
+    background: linear-gradient(135deg, #5a2083, #6a0b93); /* Two-tone gradient for a cleaner look */
+    color: #fff; /* Keep the text color light */
+    padding: 15px 30px; /* Add more padding for breathing space */
+    text-align: center; /* Center the text */
+    font-size: 1.8rem; /* Increase font size for better readability */
+    font-weight: 600; /* Slightly bolder for emphasis */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Lighter shadow for a sleeker look */
+    margin-bottom: 20px; /* Space below the banner */
+  }
+
+h2.changing-title .result-streaming {
+    color: #b46ee5; /* Desired color */
+    font-weight: bold; /* Optional: Make it bold */
+  }
+
+
+  /* About Box */
+
+  #about {
+    margin-top: 20px; /* Adjust this value as needed */
+  }
+
+
+
+  .about-box {
+    background-color: #555; /* Darker background for dark mode */
+    border: 2px solid #000000; /* Slightly lighter border for dark mode */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #ffffff; /* Light font color */
+  }
+
+
+  .about-box p {
+    margin: 0;
+    text-align: left;
+  }
+
+
+  /* Button Styles */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+
+  .download-button:hover {
+    background-color: #6A0B93;
+    box-shadow: 0 0 20px rgb(107, 63, 139);
+  }
+
+
+
+
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .changing-title {
+      font-size: 1.5rem; /* Adjust the size for smaller screens */
+    }
+  }
+
+
+
+
+
+
+
+
+  
